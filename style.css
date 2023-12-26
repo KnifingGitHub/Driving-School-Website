@@ -1,0 +1,636 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Gabarito", cursive;
+  font-family: "Merriweather", serif;
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+}
+
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(10, 30, 4, 0.7), rgba(10, 30, 4, 0.7)),
+    url("image/car_cabin.png");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav img {
+  width: 150px;
+}
+
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+/*Navbar Text and position*/
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+/*Navbar Text Color*/
+.nav-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+/*Navbar hover and highlight*/
+.nav-links ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #f44336;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+
+.text-box {
+  width: 90;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text-box h1 {
+  font-size: 4rem;
+}
+.text-box p {
+  margin: 10px 0 40px;
+  font-size: 1.2rem;
+  color: #fff;
+}
+.clickme {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 12px 34px;
+  font-size: 20px;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+}
+.clickme:hover {
+  border: 1px solid #308446;
+  background: #308446;
+  transition: 1s;
+}
+nav .material-icons {
+  display: none;
+}
+@media (max-width: 700px) {
+  .text-box h1 {
+    font-size: 2rem;
+  }
+  .nav-links ul li {
+    display: block;
+  }
+  .nav-links {
+    position: absolute;
+    background: #62fcaa;
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: -250px;
+    text-align: left;
+    z-index: 2;
+    transition: 0.3s;
+  }
+  nav .material-icons {
+    display: block;
+    color: #fff;
+    margin: 10px;
+    font-size: 3rem;
+    cursor: pointer;
+  }
+  .nav-links ul {
+    padding: 30px;
+  }
+}
+
+/* Awards Section */
+.awards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allow for wrapping on smaller screens */
+  text-align: left;
+  
+}
+
+.text-container h1{
+font-size: 2.5rem;
+
+}
+.text-container p{
+  font-size: 16px;
+  
+  }
+  
+
+/* Style the text container */
+
+.awards-container {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+}
+
+/* Style the main title */
+.award-container h1 {
+  font-size: 2rem; /* Adjust the font size */
+  margin-bottom: 10px; /* Add spacing below the title */
+}
+
+/* Style the description text */
+.award-container p {
+  font-size: 1rem; /* Adjust the font size */
+  line-height: 1.5; /* Adjust the line height */
+}
+
+
+.awards-profile {
+  width: 17rem; /* Set the width to your desired value */
+  height: 22rem; /* Set the height to your desired value */
+  background-color: #eed202;
+  border-radius: 8%;
+  border-width: 12rem;
+  border: #000 solid;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  margin: 20px; /* Adjust margin as needed to control spacing between awards */
+  padding: 20px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s;
+}
+
+.awards-profile br{
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Create the top "notch" of the phone shape */
+.awards-profile::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 20px; /* Adjust to create the size of the notch */
+  background-color: #FF5F15; /* Set the notch color to match the card */
+  border-radius: 20px 20px 0 0;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+}
+
+.awards-profile img {
+  max-width: 70%;
+  height: auto;
+}
+
+.awards-profile h2 {
+  font-size: 1.5rem;
+  color: #000;
+  margin: 10px 0;
+  white-space: nowrap; /* Prevent title text from wrapping */
+  overflow: hidden; /* Prevent title text from extending out of the card */
+  text-overflow: ellipsis; /* Show an ellipsis for overflow title text */
+
+}
+
+.awards-profile p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #4d4d4d;
+  margin: 10px 0;
+  white-space: normal; /* Allow description text to wrap within the card */
+  overflow: visible; /* Allow description text to expand within the card */
+  text-overflow: unset; /* Disable ellipsis for description text */
+  
+}
+
+/* Apply the background color transition when hovering */
+.awards-profile:hover {
+  background-color: #FF5F15; /* Transition to #4F7942 when hovering */
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 700px) {
+  .awards-profile {
+    width: 70%;
+    height: auto;
+    text-align: center;
+  }
+  .awards{
+    text-align: center;
+    }
+
+}
+
+body{
+  overflow-x: hidden;
+}
+
+/*--gallery section css---*/
+.carousel-body{
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  justify-content: center; /* Centers content vertically */
+  min-height: 50vh; /* Adjust based on your layout needs */
+  background: #2f3035; /* Background color */
+  padding: 20px 35px;
+}
+.carousel-body .text-container {
+   /* Remove absolute positioning */
+   width: 100%; /* Full width */
+   text-align: center; /* Center the text */
+   padding: 20px; /* Adds padding inside the text container */
+   margin-bottom: 20px; /* Space between the text container and the carousel */
+ }
+ .carousel-body .carousel-container {
+  width: 100%; /* Full width of the parent container */
+  /* Other carousel styles as needed */
+}
+
+.carousel-body, .wrapper {
+  position: relative;
+}
+.wrapper{
+  max-width: 1200px;
+  position: relative;
+}
+.wrapper i{
+  top: 50%;
+  height: 46px;
+  width: 46px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: absolute;
+  text-align: center;
+  line-height: 46px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+.wrapper i:first-child{
+  left: -23px;
+  display: none;
+}
+.wrapper i:last-child{
+  right: -23px;
+}
+.wrapper .carousel{
+  font-size: 0px;
+  cursor: pointer;
+  overflow:hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+.carousel.dragging{
+  cursor: grab;
+  scroll-behavior: smooth;
+}
+.carousel.dragging img{
+  pointer-events: none;
+}
+.carousel img{
+  height: 340px;
+  object-fit: cover;
+  margin-left: 14px;
+  width: calc(100%/3);
+}
+.carousel img:first-child{
+  margin-left: 0px;
+
+}
+
+@media screen and (max-width: 900px) {
+  .carousel img{
+    width: calc(100% / 2);
+  }
+}
+@media screen and (max-width: 550px) {
+  .carousel img{
+    width: 100%;
+  }
+}
+@media (max-width: 700px) {
+  .carousel-body .text-container {
+    color: #fff;
+  }
+}
+
+
+
+/*User review component*/
+
+.review-body {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 35vh;
+  margin: 0;
+  padding: 40spx;
+  background-color: #f1f1f1;
+}
+/* Styles for the review container */
+.review-container {
+  width: 400px;
+  padding: 15px;
+  margin-right: 900px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  
+}
+/* Styles for the review header */
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+/* Styles for the profile image */
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ddd;
+  margin-right: 10px;
+  object-fit: cover;
+}
+/* Styles for the reviewer's name and date */
+.reviewer-name, .review-date {
+  margin-bottom: 4px;
+}
+.reviewer-name {
+  font-weight: bold;
+  margin-right: auto;
+}
+.review-date {
+  color: #757575;
+  font-size: 0.8em;
+}
+/* Styles for the review rating */
+.review-rating {
+  color: #ffd700;
+  margin: 5px 0;
+}
+/* Styles for the review text */
+.review-text {
+  color: #555;
+  font-size: 1em;
+  line-height: 1.4;
+  max-height: 4.5em;
+  overflow: hidden;
+}
+/* Styles for the "More/Less" button */
+.expand-btn {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  margin-top: 10px;
+}
+.google-reviews-logo {
+  font-size: 2em; /* Size of the logo text */
+  font-weight: bolder;
+  display: inline-block; /* Allows the span elements to be inline */
+  white-space: nowrap; /* Prevents wrapping */
+  margin-right: 20px; /* Adjust the margin as needed */
+  font-family: 'Roboto', sans-serif;
+  
+}
+.google-reviews-logo span {
+  margin-right: -8px; /* Negative margin to pull letters closer together */
+  display: inline-block; /* Allows margin adjustments on inline elements */
+}
+.reviews-text {
+  margin-left: 8px; /* Adjust as needed to create space */
+}
+
+
+/* Individual color styles for the Google logo letters */
+.g-letter { color: #4285F4; } /* Blue */
+.o-letter { color: #EA4335; } /* Red */
+.o2-letter { color: #FBBC05; } /* Yellow */
+.g2-letter { color: #34A853; } /* Green */
+.l-letter { color: #4285F4; } /* Blue */
+.e-letter { color: #EA4335; } /* Red */
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .content-container, .review-body {
+    /* Stack items vertically on smaller screens */
+    display: block;
+    text-align: center; /* Center content */
+    width: 100%; /* Full width */
+    margin-top: 5px; /* Space from top */
+    padding: 0; /* Padding on the sides */
+  }
+
+  .google-reviews-logo {
+    margin-bottom: 20px; /* Space between the logo and the review container */
+  }
+
+  .review-container {
+    width: calc(100% - 50px); /* Full width minus padding */
+    margin: 0 auto 20px; /* Center container with margin on the bottom */
+    max-width: none; /* Override any max-width set elsewhere */
+    border-radius: 2px solid #ddd;
+  }
+
+  /* Other mobile-specific adjustments */
+  /* ... */
+}
+
+/* ... other styles ... */
+
+/* contact us section */
+
+.cc {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto; /* Combined the margin properties */
+  background: #fff;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Corrected selectors for h2 and p */
+.cbody h2 {
+  text-align: center;
+  color: #333;
+}
+
+.cbody p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  margin-top: 20px;
+}
+
+.form-control {
+  margin-bottom: 20px; /* Increase this if you want more space between form elements */
+  text-align: left;
+}
+
+.form-control label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control input[type="text"],
+.form-control input[type="email"],
+.form-control input[type="tel"],
+.form-control textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-control textarea {
+  resize: vertical;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background: #555;
+}
+
+.cbody {
+  background-color: #308446;
+  padding: 40px; /* Added padding to increase spacing around the section */
+}
+
+/* Updated media queries */
+@media (max-width: 768px) {
+  .cc {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 440px) {
+  .cc {
+    padding: 15px;
+  }
+  .form-control input[type="text"],
+  .form-control input[type="email"],
+  .form-control input[type="tel"],
+  .form-control textarea {
+    padding: 5px;
+  }
+  .btn {
+    padding: 10px;
+  }
+}
+
+/* footer */
+
+.site-footer {
+  background-color: #333; /* Dark grey background */
+  color: #fff; /* White text color */
+  padding: 20px 0; /* Padding on top and bottom */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* Space between items */
+  align-items: center;
+  max-width: 1200px; /* Max width of the footer content */
+  margin: 0 auto; /* Center the container */
+  padding: 0 20px; /* Padding on the sides */
+}
+
+/* Make sure the logo, social, and copyright sections all have equal flex basis */
+.footer-logo, .footer-social, .footer-copy {
+  flex: 1; /* Assign equal weight */
+  display: flex;
+  justify-content: center; /* Center content */
+  align-items: center;
+}
+
+.footer-logo {
+  justify-content: flex-start; /* Align logo to the left */
+}
+
+.footer-copy {
+  justify-content: flex-end; /* Align copyright text to the right */
+}
+
+.footer-logo img {
+  max-width: 100px; /* Adjust as necessary */
+}
+
+.footer-social a {
+  display: block;
+  margin: 0 auto; /* Auto margins to center within the flex item */
+}
+
+.footer-social img {
+  width: 30px; /* Adjust as necessary */
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-logo, .footer-social, .footer-copy {
+    flex-basis: 100%; /* Full width */
+    justify-content: center; /* Center content */
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .footer-social a {
+    margin: 0; /* Reset margin for mobile */
+  }
+}
